@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>WeatherHub - Pastel</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="light">
+
+  <div class="container py-4">
+
+    <div class="d-flex justify-content-between align-items-center mb-3">
+      <h3 class="m-0">Weather</span></h3>
+
+      <div class="d-flex gap-2 align-items-center">
+        <button id="unitToggle" class="btn btn-outline-secondary btn-icon" title="Toggle °C / °F">°C</button>
+        <button id="themeToggle" class="btn btn-outline-secondary btn-icon" title="Toggle Theme"><i class="bi bi-moon"></i></button>
+        <button id="refreshBtn" class="btn btn-outline-secondary btn-icon" title="Refresh"><i class="bi bi-arrow-clockwise"></i></button>
+      </div>
+    </div>
+
+    <div class="search-wrapper mb-3">
+      <div class="input-group shadow search-box">
+        <span class="input-group-text bg-white border-0"><i class="bi bi-search"></i></span>
+        <input id="searchInput" type="text" class="form-control border-0" placeholder="Search city..." autocomplete="off">
+        <button id="searchBtn" class="btn btn-primary px-4">Search</button>
+        <button id="clearInput" class="btn btn-outline-secondary btn-icon" title="Clear"><i class="bi bi-x-lg"></i></button>
+      </div>
+
+      <ul id="autocompleteList" class="list-group autocomplete shadow-sm"></ul>
+    </div>
+
+    <div id="favoritesPills" class="mb-3 d-flex gap-2 flex-wrap"></div>
+
+    <h5 class="mb-3">Dashboard cuaca kota</h5>
+    <div id="cityContainer" class="row g-3 mb-4"></div>
+
+    <div class="row g-3">
+      <div class="col-lg-6">
+        <div id="weatherCard" class="card p-4 shadow-sm d-none">
+          <h4 id="selectedCity" class="mb-3"></h4>
+          <div class="d-flex align-items-center justify-content-between">
+            <div>
+              <div id="selectedTemp" class="display-4 fw-bold mb-2"></div>
+              <p id="selectedDesc" class="text-muted mb-1"></p>
+              <p id="selectedHumidity" class="mb-0"><i class="bi bi-droplet"></i> </p>
+              <p id="selectedWind" class="mb-0"><i class="bi bi-wind"></i> </p>
+            </div>
+            <div id="selectedIcon" class="weather-icon-large"></div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <h6 class="mb-3">ramalan cuaca untuk 5 hari ke depan.</h6>
+        <div id="forecastContainer" class="d-flex gap-3 flex-wrap"></div>
+      </div>
+    </div>
+
+    <!-- Loading indicator -->
+    <div id="loading" class="loading d-none">
+      <div class="spinner-border" role="status"></div> 
+      <span class="ms-2">Loading...</span>
+    </div>
+
+    <footer class="mt-5 text-muted small text-center">
+      TA6 weather - Alyaa zahra taufiq
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+  <!-- Bootstrap JS bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
